@@ -1,0 +1,45 @@
+3. (a) This one should print out the value 7. We can have two variables defined as x
+because they are within different blocks. The second x shadows the first x, so after
+using the local x (within the brackets 4) x returns to its original value (3). 
+
+(b) I think this one should have undefined behavior. The comma operator has lowest precedence,
+so first, we set y equal to x. So essentially, we are doing int y = x, and then int x. We don't
+initialize x to anything in the scope, so it should be undefined. 
+
+(c) This one should print out 3. Explanation is the same as for number 2. We set y equal to x, 
+and then we define another variable x in the scope. 
+
+(d) This should print out 6. We assign 3 to y first, and then after y has been assigned, we assign
+y to x. Because y has been assigned before we try to assign it to x, this one should be fine. 
+
+(e) This is undefined behavior. Essentially, when we call int x = x, it is equivalent to saying:
+"int x; x = x;" First, we are declaring some variable x, and it hasn't been initialized to any value.
+Afterward, when we try to obtain the rvalue of x to assign to the variable identifier x, 
+we get some indeterminate result. 
+
+(f) This should print out 3. Initially, x is being used as a type name alias, so we use it as 
+though it were "int." After that, we set the name of a local int to x, and assign it a value of 3. 
+From here, we would just print out the value 3. 
+
+(g). I believe this should be undefined behavior in the same way that problem e is undefined.
+Initially, x is an alias to int. We declare x x, so we have a variable identifier x now. However,
+after that, we try to obtain the rvalue of x which hasn't been set, so we get an indeterminate result.
+(Running it, I always get 0, but I think it should be indeterminate). 
+
+(h). This should print 3. First, we are setting the variable identifier x equal to 3.
+After that, we set y equal to the variable identifier, so we set y equal to 3. Adding those together,
+we get 6 and print it out. 
+
+(i). Does not compile. Initially, x is referring to a type name alias. However, after we set
+the variable identifier x equal to 3, the typename alias x no longer exists. When we try to 
+call "x y," this no longer makes syntactic sense!
+
+4. Because strings can be represented with char arrays, they aren't the most
+basic building block. Because there could be multiple characters in a string,
+it might be easier to represent a string literal as an multiple objects in memory. 
+Another solution would be representing the string literal with just a pointer -
+I'm not entirely sure of the tradeoffs, but we wouldn't know exactly where the string
+ends.  
+
+5. This assignment took me a fairly long amount of time (learning python, and C++ user defined literals)
+took me quite some time to learn. Overall, probably around 6 hours or so. 

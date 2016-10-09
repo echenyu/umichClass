@@ -1,0 +1,30 @@
+This archive contians three separate git repositories, one for each question.
+
+This folder itself is not a git repository.
+
+To get started, try
+  cd 1
+  git log
+
+For number 1, the most recent commit is the one that made the mistake. Try
+
+  git log -n1 --name-status
+  |   |   |   |
+  |   |   |   \- Add the names and "status" (A-Added, D-Deleted, M-modified)
+  |   |   |      for each file affected by this commit.
+  |   |   |      Also consider trying --stat for more details
+  |   |   |
+  |   |   \- Show only the most recent (one) commit.
+  |   |
+  |   \- Choose the `log` subcommand. This command is used for exploring
+  |      committed history, which makes it a good command for part 1, which
+  |      explores committed history. It's less useful for part 2 or part 3...
+  |
+  \- git is the program you are running. "git" itself does nothing, rather you
+     need to tell git what operation you would like it to do, such as "init" to
+     create a new repository or "commit" to save staged changes.
+
+     This is a common pattern for many utilites, such as "apt-get" which you
+     have used to "apt-get install" programs, but can also "upgrade" them,
+     "remove" them, or "apt-get source" to download their source code.
+
